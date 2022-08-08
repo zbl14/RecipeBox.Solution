@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using RecipeBox.Models;
 using System.Collections.Generic;
 using System.Linq;
 // using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ProjectName.Controllers
+namespace RecipeBox.Controllers
 {
-  public class ClassNamesController : Controller
+  public class RecipesController : Controller
   {
 
   }

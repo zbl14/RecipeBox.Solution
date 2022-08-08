@@ -4,9 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using ProjectName.Models;
+using RecipeBox.Models;
+using Microsoft.AspNetCore.Identity;
 
-namespace ProjectName
+namespace RecipeBox
 {
   public class Startup
   {
@@ -18,20 +19,24 @@ namespace ProjectName
       Configuration = builder.Build();
     }
 
-    public IConfigurationRoot Configuration { get; }
+    public IConfigurationRoot Configuration { get; set; }
 
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddMvc();
+
       services.AddEntityFrameworkMySql()
-      .AddDbContext<ToDoListContext>(options => options
-      .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+        .AddDbContext<RecipeBoxContext>(options => options
+        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+    
     }
 
     public void Configure(IApplicationBuilder app)
     {
       app.UseDeveloperExceptionPage();
+
       app.UseRouting();
+
 
       app.UseEndpoints(routes =>
       {
@@ -39,7 +44,7 @@ namespace ProjectName
       });
 
       app.UseStaticFiles();
-      
+
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Hello World!");

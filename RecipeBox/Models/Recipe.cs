@@ -1,6 +1,6 @@
-namespace ProjectName.Models
+namespace RecipeBox.Models
 {
-  public class ClassName
+  public class Recipe
   {
     // properties, constructors, methods, etc. go here
   }

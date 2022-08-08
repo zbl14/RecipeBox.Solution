@@ -2,7 +2,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
 
-namespace ProjectName
+namespace RecipeBox
 {
   public class Program
   {
