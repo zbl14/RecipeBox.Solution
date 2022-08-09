@@ -4,8 +4,10 @@
 
 @model RecipeBox.Models.Recipe
 
-<h2>Recipe Details</h2>
-<hr />
+<div class="jumbotron text-center">
+  <h2>Recipe Details</h2>
+</div>
+
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.Rating): @Html.DisplayFor(model => model.Rating)</h3>
 <h3>@Html.DisplayNameFor(model => model.Ingredients): @Html.DisplayFor(model => model.Ingredients)</h3>

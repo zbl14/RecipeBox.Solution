@@ -4,7 +4,10 @@
 
 @model RecipeBox.Models.Category
 
-<h4>Add a new recipe</h4>
+<div class="jumbotron text-center">
+  <h2>Add a new recipe</h2>
+</div>
+
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
