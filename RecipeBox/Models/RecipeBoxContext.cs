@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace RecipeBox.Models
 {
-  public class RecipeBoxContext : DbContext
+  public class RecipeBoxContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Recipe> Recipes { get; set; }
     public DbSet<Category> Categories { get; set; }
