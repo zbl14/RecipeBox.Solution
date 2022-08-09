@@ -20,7 +20,3 @@ div#footer {
   border-radius: .3rem; 
   font-family: Russhell; 
 }
-
-#bgImage {
-  z-index: -1;
-}
