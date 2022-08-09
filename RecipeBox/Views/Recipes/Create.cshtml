@@ -15,7 +15,7 @@
   @Html.TextBoxFor(model => model.Ingredients)
 
   @Html.LabelFor(model => model.Rating)
-  @Html.TextBoxFor(model => model.Rating)
+  @Html.TextBoxFor(model => model.Rating, new { type="range" , min = 1, max = 10, value = 5, step = 1})
 
   @Html.Label("Select category")
   @Html.DropDownList("CategoryId")
