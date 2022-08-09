@@ -2,5 +2,39 @@
   Layout = "_Layout";
 }
 
-<h1>Welcome to the Recipe Box!</h1>
-<p>@Html.ActionLink("See all recipes", "Index", "Recipes")</p> <p>@Html.ActionLink("See all categories", "Index", "Categories")</p>
+<div class="jumbotron text-center">
+  <h2>Welcome to the Recipe Box!</h2>
+</div>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          @Html.ActionLink("Home", "Index", "Home", null, new { @class="nav-link" })
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </a>
+          <ul class="dropdown-menu">
+            <li>@Html.ActionLink("All Categories", "Index", "Categories", null, new { @class="dropdown-item" })</li>
+            <li>@Html.ActionLink("New Category", "Create", "Categories", null, new { @class="dropdown-item" })</li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Recipe
+          </a>
+          <ul class="dropdown-menu">
+            <li>@Html.ActionLink("All Recipes", "Index", "Recipes", null, new { @class="dropdown-item" })</li>
+            <li>@Html.ActionLink("New Recipe", "Create", "Recipes", null, new { @class="dropdown-item" })</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr />
+<div>
+  <img src='~/img/background.jpg' class="img-fluid" alt="a pic of meal" />
+</div>
