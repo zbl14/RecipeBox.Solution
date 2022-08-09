@@ -16,12 +16,23 @@ namespace RecipeBox.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string searchString)
     {
-      var model = _db.Recipes
-        .OrderByDescending(recipe => recipe.Rating)
-        .ToList();
-      return View(model);
+      if(!string.IsNullOrEmpty(searchString))
+      {
+        var model = _db.Recipes
+          .Where(recipe => recipe.Ingredients.Contains(searchString))
+          .OrderByDescending(recipe => recipe.Rating)
+          .ToList();
+        return View(model);
+      }
+      else
+      {
+        var model = _db.Recipes
+          .OrderByDescending(recipe => recipe.Rating)
+          .ToList();
+        return View(model);
+      }
     }
 
     public ActionResult Create()

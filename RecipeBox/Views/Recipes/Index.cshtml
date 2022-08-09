@@ -8,6 +8,45 @@
 <div class="jumbotron text-center">
   <h2>Recipes List</h2>
 </div>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          @Html.ActionLink("Home", "Index", "Home", null, new { @class="nav-link" })
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </a>
+          <ul class="dropdown-menu">
+            <li>@Html.ActionLink("All Categories", "Index", "Categories", null, new { @class="dropdown-item" })</li>
+            <li>@Html.ActionLink("New Category", "Create", "Categories", null, new { @class="dropdown-item" })</li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Recipe
+          </a>
+          <ul class="dropdown-menu">
+            <li>@Html.ActionLink("All Recipes", "Index", "Recipes", null, new { @class="dropdown-item" })</li>
+            <li>@Html.ActionLink("New Recipe", "Create", "Recipes", null, new { @class="dropdown-item" })</li>
+          </ul>
+        </li>
+      </ul>
+      <div>
+        @using (Html.BeginForm("Index", "Recipes", FormMethod.Get))
+        {
+          <div class="d-flex" role="search">
+            @Html.TextBox("SearchString", null, new { type="search", placeholder = "Search", @class="form-control me-2"})
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</nav>
+<hr />
 
 @if (@Model.Count == 0)
 {
