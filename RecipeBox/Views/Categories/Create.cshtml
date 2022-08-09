@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { @required="required" })
   <input type="submit" value="Add new recipe" />
 }
 <p>@Html.ActionLink("Show all categories", "Index")</p>
